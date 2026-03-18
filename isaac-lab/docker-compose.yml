@@ -41,6 +41,12 @@ services:
       - KUBECONFIG=/kube/config
     restart: unless-stopped
 
+  ros-humble:
+    image: osrf/ros:humble-desktop
+    container_name: ros
+    network_mode: "host"
+
+
   nginx:
     network_mode: "host"
     depends_on:
